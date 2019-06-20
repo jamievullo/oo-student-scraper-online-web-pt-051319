@@ -33,15 +33,15 @@ class Scraper
 
      doc.css(".social-icon-container").each do |item|
         item.css("a").each do  |content|
-        link = content.attr('href')
-          if link.include?("twitter")
-            student[:twitter] = link
-          elsif link.include?("linkedin")
-            student[:linkedin] = link
-          elsif link.include?("github")
-            student[:github] = link
+        social_link = content.attr('href')
+          if social_link.include?("twitter")
+            student[:twitter] = social_link
+          elsif social_link.include?("linkedin")
+            student[:linkedin] = social_link
+          elsif social_link.include?("github")
+            student[:github] = social_link
           else
-            student[:blog] = link      
+            student[:blog] = social_link      
         end
     
       end  
